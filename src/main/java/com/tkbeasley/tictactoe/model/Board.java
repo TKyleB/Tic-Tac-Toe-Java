@@ -21,18 +21,35 @@ public class Board {
         return size;
     }
 
-    public MoveResult makeMove(int row, int col, Symbol newSymbol) {
+    public Cell[] getBoardRow(int row) {
+        return board[row];
+    }
+    public Cell[] getBoardColumn(int col) {
+        Cell[] columns = new Cell[3];
+        for (int row = 0; row < board.length; row++) {
+             columns[row] = board[row][col];
+        }
+        return columns;
+    }
+    public Cell[] getBoardLeftDiagonal() {
+        return new Cell[] {board[0][0], board[1][1], board[2][2]};
+    }
+    public Cell[] getBoardRightDiagonal() {
+        return new Cell[] {board[0][2], board[1][1], board[2][0]};
+    }
+
+    public UpdateResult updateCell(int row, int col, Symbol newSymbol) {
         Cell cell;
         try {
             cell = getCell(row, col);
         } catch (ArrayIndexOutOfBoundsException e) {
-            return MoveResult.failure("Invalid position");
+            return UpdateResult.failure("Invalid position");
         }
         if (cell.getState() == Symbol.Empty) {
             cell.setState(newSymbol);
-            return MoveResult.success();
+            return UpdateResult.success();
         }
-        return MoveResult.failure("Cell is not empty");
+        return UpdateResult.failure("Cell is not empty");
     }
 
 
