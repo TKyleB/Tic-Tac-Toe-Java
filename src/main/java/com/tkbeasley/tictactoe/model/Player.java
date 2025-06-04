@@ -10,4 +10,9 @@ public class Player {
     public Symbol getSymbol() {
         return symbol;
     }
+
+    @Override
+    public String toString() {
+        return symbol.toString();
+    }
 }

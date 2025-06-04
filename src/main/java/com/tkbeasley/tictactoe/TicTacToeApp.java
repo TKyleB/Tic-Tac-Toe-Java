@@ -1,5 +1,6 @@
 package com.tkbeasley.tictactoe;
 
+import com.tkbeasley.tictactoe.model.Board;
 import com.tkbeasley.tictactoe.model.Game;
 import com.tkbeasley.tictactoe.model.Player;
 import com.tkbeasley.tictactoe.model.Symbol;
@@ -11,6 +12,8 @@ public class TicTacToeApp {
 
         System.out.println("Tic-Tac-Toe");
         Game game = Setup();
+        PrintGameBoard(game.getBoard());
+        // System.out.println("Player " + game.getCurrentTurn()  + ". Make a move.");
 
     }
 
@@ -29,6 +32,15 @@ public class TicTacToeApp {
                 return new Game(playerOne, playerTwo);
             } else {
                 System.out.println("Invalid Selection. Try Again.");
+            }
+        }
+    }
+    public static void PrintGameBoard(Board board) {
+        for (int row=0; row < board.getSize(); row++) {
+            System.out.println("-----------");
+            for (int col=0; col < board.getSize(); col++) {
+                if (col == 2) System.out.print(" " + board.getCell(row, col) + " \n");
+                else System.out.print(" " + board.getCell(row, col) + "  |");
             }
         }
     }

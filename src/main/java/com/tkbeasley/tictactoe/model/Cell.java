@@ -13,4 +13,10 @@ public class Cell {
     public void setState(Symbol state) {
         this.state = state;
     }
+
+    @Override
+    public String toString() {
+        if (state == Symbol.Empty) return "";
+        else return state.toString();
+    }
 }

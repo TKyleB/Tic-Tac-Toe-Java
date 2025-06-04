@@ -16,4 +16,8 @@ public class Game {
     public Player getCurrentTurn() {
         return currentTurn;
     }
+
+    public Board getBoard() {
+        return board;
+    }
 }
