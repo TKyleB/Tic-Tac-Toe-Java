@@ -31,10 +31,10 @@ public class ConsoleView {
         System.out.println(result.getErrorMessage());
     }
     public void displayGameResult(WinResult result) {
-        if  (result.getWinner().getSymbol() == Symbol.Empty) {
+        if  (result.getWinner().symbol() == Symbol.Empty) {
             System.out.println("Its a draw!");
         } else {
-            System.out.println("Game Over! " + result.getWinner().getSymbol() + " wins!");
+            System.out.println("Game Over! " + result.getWinner().symbol() + " wins!");
         }
     }
     public void printGameBoard(Board board) {

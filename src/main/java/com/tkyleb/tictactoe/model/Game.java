@@ -1,9 +1,9 @@
 package com.tkyleb.tictactoe.model;
 
 public class Game {
-    private Board board;
-    private Player playerOne;
-    private Player playerTwo;
+    private final Board board;
+    private final Player playerOne;
+    private final Player playerTwo;
     private Player currentTurn;
     private int turn;
 
@@ -52,7 +52,7 @@ public class Game {
 
     private Player getPlayerSymbol(Symbol symbol) {
         // Returns the player that matches the symbol
-        if (playerOne.getSymbol() == symbol) return playerOne;
+        if (playerOne.symbol() == symbol) return playerOne;
         else return playerTwo;
     }
 
@@ -75,7 +75,7 @@ public class Game {
     }
 
     public UpdateResult makeMove(int row, int col) {
-        var updateResult = board.updateCell(row, col, getCurrentTurn().getSymbol());
+        var updateResult = board.updateCell(row, col, getCurrentTurn().symbol());
         if (updateResult.isSuccess()) {
             switchTurns();
         }

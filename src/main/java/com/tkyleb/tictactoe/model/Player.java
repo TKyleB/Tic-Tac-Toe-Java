@@ -1,15 +1,6 @@
 package com.tkyleb.tictactoe.model;
 
-public class Player {
-    private Symbol symbol;
-
-    public Player(Symbol symbol) {
-        this.symbol = symbol;
-    }
-
-    public Symbol getSymbol() {
-        return symbol;
-    }
+public record Player(Symbol symbol) {
 
     @Override
     public String toString() {

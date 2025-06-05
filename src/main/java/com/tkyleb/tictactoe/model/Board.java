@@ -1,7 +1,7 @@
 package com.tkyleb.tictactoe.model;
 
 public class Board {
-    private Cell[][] board;
+    private final Cell[][] board;
     private final int size = 3;
 
     public Board() {

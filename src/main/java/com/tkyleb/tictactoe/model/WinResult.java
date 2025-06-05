@@ -1,8 +1,8 @@
 package com.tkyleb.tictactoe.model;
 
 public class WinResult {
-    private boolean isWinner;
-    private Player winner;
+    private final boolean isWinner;
+    private final Player winner;
 
     private WinResult(boolean isWinner, Player winner) {
         this.isWinner = isWinner;

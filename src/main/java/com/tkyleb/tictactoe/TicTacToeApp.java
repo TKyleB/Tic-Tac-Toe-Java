@@ -10,7 +10,7 @@ public class TicTacToeApp {
     public static void main(String[] args) {
 
         ConsoleView view = new ConsoleView();
-        Game game = null;
+        Game game;
 
         view.displayWelcomeMessage();
         Player[] players = view.getPlayerSymbols();
@@ -20,7 +20,7 @@ public class TicTacToeApp {
 
         while (true) {
             int moveInput = view.getPlayerMove(game.getCurrentTurn());
-            UpdateResult updateResult = null;
+            UpdateResult updateResult;
 
             updateResult = switch (moveInput) {
                 case 7 -> game.makeMove(0, 0);
