@@ -1,4 +1,4 @@
-package com.tkbeasley.tictactoe.model;
+package com.tkyleb.tictactoe.model;
 
 public class Game {
     private Board board;
